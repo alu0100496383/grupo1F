@@ -1,0 +1,396 @@
+\documentclass[spanish,a4paper,11pt,twoside]{report}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[dvips]{graphicx}
+%\usepackage[dvips]{epsfig}
+%\usepackage[latin1]{inputenc}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\SONY}{{\sc Sony}}
+\newcommand{\MICROSOFT}{{\sc Microsoft}}
+\newcommand{\GCC}{\textsf{\textsc{G}CC}}
+\newcommand{\INTEL}{\textsf{\textsc{I}ntel}}
+
+
+
+\newcommand{\RET}{\STATE \textbf{retornar} }
+\newcommand{\TO}{\textbf{hasta} }
+\newcommand{\AND}{\textbf{y} }
+\newcommand{\OR}{\textbf{o} }
+
+%Entorno para listar código fuente
+\newenvironment{sourcecode}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\scriptsize\bfseries}
+{\end{list}}
+
+\newenvironment{littlesourcecode}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item\tiny\bfseries}
+{\end{list}}
+
+\newenvironment{summary}
+{\par\noindent\begin{center}\textbf{Abstract}\end{center}\begin{itshape}\par\noindent}
+{\end{itshape}}
+
+\newenvironment{keywords}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item[\hskip\labelsep \bfseries Keywords:]}
+{\end{list}}
+
+\newenvironment{palabrasClave}
+{\begin{list}{}{\setlength{\leftmargin}{1em}}\item[\hskip\labelsep \bfseries Palabras clave:]}
+{\end{list}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formato de las páginas
+
+
+%%\topmargin -4 mm
+%\topmargin -21 mm
+%\headheight 10 mm
+%\headsep 10 mm
+
+%\textheight 229 mm
+%\textheight 246 mm
+
+%\oddsidemargin -5.4 mm
+%\evensidemargin -5.4 mm
+\oddsidemargin 5 mm
+\evensidemargin 5 mm
+
+%\oddsidemargin -3 mm
+%\evensidemargin -3 mm
+
+%\textwidth 17 cm
+\textwidth 15 cm
+%\columnsep 10 mm
+
+\input{amssym.def}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% Portada
+
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{0mm}
+\vspace*{\stretch{1}}
+
+
+
+\HRule
+\begin{center}
+        {\Huge Interpolación de} \\[2.5mm] 
+        {\Huge Taylor} \\[2.5mm]
+        {\Large  Mérari Afonso \\ Ignacio Fragoso \\ Lidia García} \\[5mm]
+        {\Large \textit{Grupo $1F$ }} \\[5mm]
+
+
+        {\em Técnicas Experimentales. $1^{er}$ curso. $2^{do}$ semestre} \\[5mm]
+        
+        Facultad de Matemáticas \\[5mm]
+        
+        Universidad de La Laguna \\
+\end{center}
+\HRule
+\vspace*{\stretch{2}}
+\begin{center}
+  La Laguna, \today 
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+
+\pagestyle{myheadings} 
+\markboth{Nombre del alumno}{Interpolación de Taylor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+\setcounter{page}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage{\pagestyle{empty}\cleardoublepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{5mm}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\chapter{Motivacion y objetivos}
+\label{chapter:obj}
+%Los objetivos le dan al lector las razones por las que se realizó el
+%proyecto o trabajo de investigación.
+
+
+\section{Seccion Uno}
+\label{1:sec:1}
+
+Los objetivos le dan al lector las razones por las que se realizo el
+proyecto o trabajo de investigacion.\\
+  Primer prarafo de la primera seccion.
+
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\section{Seccion Dos}
+\label{1:sec:2}
+  Primer parrafo de la segunda seccion.
+
+\begin{itemize}
+  \item Item 1
+  \item Item 2
+  \item Item 3
+\end{itemize}
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\chapter{Fundamentos teóricos}
+\label{chapter:teo}
+%En este capítulo se han de presentar los antecedentes teóricos y prácticos que
+%apoyan el tema objeto de la investigación.
+
+	Para comprender de forma correcta el tema a exponer es necesario conocer primero la definición de interpolar. Según la Real Academia Española (RAE) disponemos de estas cuatro opciones: 
+\begin{itemize}
+  \item [$*$]
+  Poner algo entre cosas.\\
+  \item [$*$]
+  Intercalar palabras o frases en el texto de un manuscrito antiguo, o en obras y escritos ajenos.
+  \item [$*$]
+  Interrumpir o hacer una breve intermisión en la continuación de algo, y volver luego a proseguirlo.
+  \item [$*$]
+  Calcular el valor aproximado de una magnitud en un intervalo cuando se conocen algunos de los valores que toma a uno y otro lado de dicho intervalo.\\
+\end{itemize}
+
+
+En nuestro caso, la opción que define mejor el tema a tratar es la última, ya que se trata de la definición matemática de interpolación.\\
+La interpolación surge porque muchas veces en una función sólo conocemos un conjunto de valores, y si queremos calcular el valor de la función para una abscisa diferente de las conocidas, debemos utilizar otra función que la aproxime, por tanto el valor que obtengamos será una aproximación del valor real. Lo que nos lleva a estar cometiendo un error, ya que se trata de una aproximación.\\
+Pese a que existen varias formas de realizar este cálculo, se utiliza la interpolación porque es el método más sencillo.\\
+En este caso se utilizan polinomios como funciones de aproximación. Este tipo de interpolación se denomina interpolación polinómica.\\
+
+
+\section{Tipos de interpolación polinómica}
+\label{2:sec:1}
+  La función de interpolación a encontrar dependerá, entre otras cosas, de la cantidad de datos reales de los que partimos, y de cómo estos puntos se distribuyen por el plano cartesiano. Esto nos dará una idea del tipo de función de interpolación que debemos buscar.
+
+\subsection{Interpolación Lineal}
+  Este tipo de interpolación es empleado cuando suponemos que las variaciones son proporcionales.\\
+  Por ejemplo: 
+Dados dos puntos ($x_1$, $y_1$) y  ($x_3$, $y_3$), entonces la interpolación lineal consiste en hallar una estimación del valor $y$, para un valor $x$  tal que $x_1<x <x_3$. Teniendo en cuenta estas suposiciones, podemos determinar:
+
+\[
+y_2 = y_1 + \frac{(y_3 - y_1)(x_2 - x_1)}{x_3 - x_1}
+\]\\ 
+
+
+(((((GRÁFICA))))))
+
+
+\subsection{Interpolación Cuadrática}
+Si en vez de utilizar rectas, es decir polinomios de primer grado, utilizamos polinomios de segundo grado para interpolar, estaremos realizando interpolación cuadrática. Para la interpolación lineal utilizábamos dos puntos, ya que dos puntos determinan una recta, ahora necesitaremos tres puntos para determinar la correspondiente parábola.\\
+El forma de resolver el sistema para encontrar los valores que determinan a la función cuadrática $(a, b, c)$ es:
+
+\[
+y = a + b(x - x_0) + c(x - x_0)(x - x_1)
+\]\\
+
+Lagrange (1736-1813) expuso una manera simplificada de calcular los polinomios interpoladores de grado $n$ para el caso de un polinomio de 2º grado que pasa por los puntos $(x_0, y_0), (x_1, y_1), (x_2, y_2)$:\\
+
+\[
+y = y_0\frac{(x - x_1)(x - x_2)}{(x_0 - x_1)(x - x_2)} + y_1\frac{(x- x_0)(x - x_2)}{(x_1 - x_0)(x_0 - x_2)} + y_2\frac{(x - _0)(x - x_1)}{(x_2 - x_0)(x_2 - x_1)}
+\]\\ 
+
+(Fórmula de Lagrange para n=2)((((HACER UNA REFERENCIA A LA ECUCION DE LAGRANGE)))))))
+
+A parte de la interpolación de Lagrange, existen otros métodos muy conocidos como son el método de las diferencias divididas de Newton y la interpolación de Hermite.\\
+También existen métodos de Interpolación segmentaria que nos permiten aproximar funciones de un modo eficaz. Entre ellos cabe destacar la interpolación por splines y la interpolación de Taylor. Este último será el que estudiaremos nosotros.
+
+
+\section{Interpolación  de Taylor}
+\label{2:sec:2}
+  La Interpolación de Taylor usa el Desarrollo de Taylor de una función en un punto para construir un polinomio de grado $n$ que se aproxima a la función dada. Tiene dos ventajas esenciales sobre otras formas de interpolación:
+  \begin{enumerate}
+  \item
+  Requiere sólo de un punto $X_0$ conocido de la función para su cálculo.
+  \item
+  El cálculo del Polinomio de Taylor es sumamente sencillo comparado con otras formas de interpolación polinómica:
+  \end{enumerate}
+
+\begin{center}
+$P(x)=\sum_{i=1}^n\frac{f^{(i)} (x_0)}{i!}\quad(x - x_0)^i $
+\end{center}  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\chapter{Procedimiento experimental}
+\label{chapter:exp}
+
+%\input{tex/cap3.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusiones}
+\label{chapter:conclusiones}
+
+\begin{center}
+\begin{tabular}{lrc}
+\hline
+Valor del Centro & Interpolación Taylor & Valor Real & Error \\
+\hline
+1.0 & -1 & -1 & 0\\
+\hline
+1.25 & -1.00025363221339 & -1 & 0.000253632213394583 \\
+\hline
+1.5 & -1.00452485553482 & -1 & 0.00452485553481630\\
+\hline
+1.75 & -0.900045035338955 & -1 & -0.0999549646610447\\
+\hline
+2 & 0.123909925872083 & -1 & -1.12390992587208
+\hline
+
+\end{tabular}
+\end{center}
+%\input{tex/cap4.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+\newpage{\pagestyle{empty}\cleardoublepage}
+\thispagestyle{empty}
+\begin{appendix}
+
+\chapter{Título del Apéndice 1}
+\label{appendix:1}
+\section{Algoritmo XXX}
+\label{Apendice1:XXX}
+
+\begin{center}
+\begin{footnotesize}
+\begin{verbatim}
+###################################################################################
+# Fichero .py
+###################################################################################
+#
+# AUTORES
+#   
+# FECHA
+#
+# DESCRIPCION
+#
+###################################################################################
+\end{verbatim}
+\end{footnotesize}
+\end{center}
+
+\section{Algoritmo YYY}
+\label{Apendice1:YYY}
+
+\begin{center}
+\begin{footnotesize}
+\begin{verbatim}
+/###################################################################################
+ # Fichero .h
+ ###################################################################################
+ #
+ # AUTORES
+ #
+ # FECHA
+ #
+ # DESCRIPCION
+ #
+ ##################################################################################
+\end{verbatim}
+\end{footnotesize}
+\end{center}
+
+%\input{tex/apendice1.tex}
+
+\chapter{Título del Apéndice 2}
+\label{appendix:2}
+\section{Otro apendice: Seccion 1}
+\label{Apendice2:label}
+
+\begin{center}
+\begin{footnotesize}
+
+\begin{verbatim}
+Texto
+\end{verbatim}
+
+\end{footnotesize}
+\end{center}
+
+\section{Otro apendice: Seccion 2}
+\label{Apendice2:label2}
+
+\begin{center}
+\begin{footnotesize}
+
+\begin{verbatim}
+Texto
+\end{verbatim}
+
+
+\end{footnotesize}
+\end{center}
+
+%\input{tex/apendice2.tex}
+
+\end{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Bibliografía}
+\bibliographystyle{plain}
+
+
+%\bibliography{bib/references}
+\nocite{*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+#!/usr/bin/python 
+import random, sys
+from math import * 
+from sympy import * 
+valor_x = Symbol('x') 
+valor_c = Symbol('c') 
+funcion = cos(pi*valor_x) 
+def fac(n):
+	if n == 0: 
+		return 1 
+	else:
+		return n * fac(n-1)
+def Taylor (x,c,n):
+	funcion = cos(pi*valor_x) 
+	i=0
+	for i in range(n+1): 
+		derivada = eval(diff(funcion,valor_c,n)) 
+		polinomio += ((derivada/(fac(n)))*((x - c)**n)) 
+	i+=1 
+	return polinomio
+if __name__=='__main__': 
+	x=float(sys.argv[1]) 
+	c=float(sys.argv[2]) 
+	n=int(sys.argv[3]) 
+	print "El resultado de evaluar la derivada {0}-esima en el punto {1}, cuyo centro es {2} es {3}".format(n, x, c, Taylor(n,c,x))
