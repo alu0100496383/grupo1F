@@ -63,7 +63,7 @@
 \section{Interpolación de Taylor}
 \begin{frame}
 	\frametitle{Procedimiento}
-		\centerline {Nuestra función es: {\LARGE $cos(\pi x)$ }}\
+		\centerline {Nuestra función es: {\LARGE $cos(\pi x)$ }en [1,2]}\
         \begin{itemize}
         \item Para hallar la interpolación de Taylor hemos utilizado el polinomio de Taylor
         \[P(x)=\sum\limits_{i=1}^n\frac{f^{(i)}(x_0)}{i!}\quad(x-x_0)^i \]
@@ -142,11 +142,28 @@
 	\end{center}
 \end{frame}
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%\begin{frame}
-  %\includegraphics{grafica1.py}
-  %\hspace*{7.5cm}
- % \includegraphics{grafica2.py}
-%\end{frame}
+\begin{frame}
+ Gráfica calculada para la n-ésima 2
+ \begin{center}
+ \begin{figure}
+   \includegraphics[scale=0.5]{grafica1.png}
+   %\hspace*{7.5cm}
+ \end{figure}
+ \end{center}
+\end{frame}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{frame}
+ Gráfica calculada para la n-ésima 20
+ \begin{center}
+ \begin{figure}
+   \includegraphics[scale=0.5]{grafica2.png}
+ \end{figure}
+ \end{center}
+\end{frame}
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{frame}
 
+	\centerline{\Huge FIN}
+\end{frame}
 \end{document}
 
