@@ -32,15 +32,14 @@ def f2(x):
   return polinomio
 
 y1 = f1(x)
-print y1
 y2 = f2(x)
-print y2
 
-p1, = plot(x,y1,'ro')
+
+p1, = plot(x,y1,'r-')
 p2, = plot(x,y2,'bo')
-xlabel('valor de x')
-ylabel('valor de la funcion')
-legend([p1, p2], ['funcion real', 'Taylor'])
+xlabel('Valor de x')
+ylabel('Valor de la funcion')
+legend([p1, p2], ['Funcion real', 'Inter. Taylor'])
 title('Grafico con x variable')
 xlim(1.0, 2.0)
 show()
