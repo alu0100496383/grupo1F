@@ -2,16 +2,17 @@ from matplotlib.pylab import *
 from math import *
 from sympy import *
 
-x=linspace(-10,10,20)
+x=linspace(1,2,20)
 pi = 3.141592653589793238462643383279502884197169399375105820974944592307816406286
-funcion = zeros(len(x))
-c = 1.25
-n = 5
+sym_c = Symbol('c')
+c = 1.5
+n = 2
 
 def f1(x):
-   for i in xrange(len(x)):
-     funcion[i] = cos(pi*(x[i])  
-   return funcion
+  funcion = []
+  for i in x:
+    funcion.append(cos(pi*i))
+  return funcion
 
 def fac(n):
   if n == 0:
@@ -20,21 +21,26 @@ def fac(n):
     return n * fac(n-1)
 
 def f2(x):
-  polinomio = 0
-  for i in range(n + 1):
-    derivada = eval(str(diff(funcion,c,i)))
-    polinomio += ((derivada/(fac(i)))*((x - c)**i))
+  funcion = cos(pi*sym_c)
+  polinomio = []
+  for h in x:
+    suma = 0
+    for i in range(n + 1):
+      derivada = eval(str(diff(funcion,sym_c,i)))
+      suma += ((derivada/(fac(i)))*((h - c)**i))
+    polinomio.append(suma)
   return polinomio
 
-
 y1 = f1(x)
+print y1
 y2 = f2(x)
+print y2
 
-plot(x,y1,'r-')
-hold('on')
-plot(x,y2,'bo')
+p1, = plot(x,y1,'ro')
+p2, = plot(x,y2,'bo')
 xlabel('valor de x')
 ylabel('valor de la funcion')
-legend(['funcion real', 'Taylor'])
+legend([p1, p2], ['funcion real', 'Taylor'])
 title('Grafico con x variable')
+xlim(1.0, 2.0)
 show()
