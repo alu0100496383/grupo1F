@@ -4,20 +4,11 @@
 \usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[dvips]{graphicx}
-%\usepackage[dvips]{epsfig}
-%\usepackage[latin1]{inputenc}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\SONY}{{\sc Sony}}
 \newcommand{\MICROSOFT}{{\sc Microsoft}}
 \newcommand{\GCC}{\textsf{\textsc{G}CC}}
 \newcommand{\INTEL}{\textsf{\textsc{I}ntel}}
-
-
 
 \newcommand{\RET}{\STATE \textbf{retornar} }
 \newcommand{\TO}{\textbf{hasta} }
@@ -129,12 +120,30 @@
 \tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage{\pagestyle{empty}\cleardoublepage}
+\newpage{\pagestyle{empty}\cleardoublepage} %Imagenes
 \listoffigures
 
+
+
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage{\pagestyle{empty}\cleardoublepage}
+\newpage{\pagestyle{empty}\cleardoublepage} % Tablas
 \listoftables
+
+
+
+
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage{\pagestyle{empty}\cleardoublepage}
@@ -200,14 +209,16 @@ En este caso se utilizan polinomios como funciones de aproximación. Este tipo d
 \subsection{Interpolación Lineal}
   Este tipo de interpolación es empleado cuando suponemos que las variaciones son proporcionales.\\
   Por ejemplo: 
-Dados dos puntos ($x_1$, $y_1$) y  ($x_3$, $y_3$), entonces la interpolación lineal consiste en hallar una estimación del valor $y$, para un valor $x$  tal que $x_1<x <x_3$. Teniendo en cuenta estas suposiciones, podemos determinar:
+Dados dos puntos ($x_1$, $y_1$) y  ($x_2$, $y_2$), entonces la interpolación lineal consiste en hallar una estimación del valor $y$, para un valor $x$  tal que $x_1<x <x_2$. Teniendo en cuenta estas suposiciones, podemos determinar:
 
 \[
-y_2 = y_1 + \frac{(y_3 - y_1)(x_2 - x_1)}{x_3 - x_1}
+y = y_1 + \frac{(y_2 - y_1)(x - x_1)}{x_2 - x_1}
 \]\\ 
 
 
-(((((GRÁFICA))))))
+%\includegraphics[width=0.5\textwidth]{grafica3.eps}
+
+
 
 
 \subsection{Interpolación Cuadrática}
@@ -229,6 +240,18 @@ y = y_0\frac{(x - x_1)(x - x_2)}{(x_0 - x_1)(x - x_2)} + y_1\frac{(x- x_0)(x - x
 A parte de la interpolación de Lagrange, existen otros métodos muy conocidos como son el método de las diferencias divididas de Newton y la interpolación de Hermite.\\
 También existen métodos de Interpolación segmentaria que nos permiten aproximar funciones de un modo eficaz. Entre ellos cabe destacar la interpolación por splines y la interpolación de Taylor. Este último será el que estudiaremos nosotros.
 
+%\includegraphics[width=0.5\textwidth]{graficalagrange.eps}
+
+
+\section{Interpolación por Splines}
+	La Interpolación por Splines es un refinamiento de la interpolación polinómica que usa "pedazos" de varios polinomios en distintos intervalos de la función a interpolar para evitar problemas de oscilación como el llamado Fenómeno de Runge.\\
+
+La idea es que agrupamos las abscisas $x_0,x_1,...,x_m$ \ en distintos intervalos según el grado del spline que convenga emplear en cada uno. Así, un spline será un polinomio interpolador de grado n de f para cada intervalo. A la postre, los distintos splines quedarán "unidos" recubriendo todas las abscisas e interpolando a la función.\\
+
+El principal problema que presenta la interpolación por splines reside en los puntos que son comunes a dos intervalos (extremos). Por esos puntos deben pasar los splines de ambos intervalos, pero para que la interpolación sea ajustada, conviene que el punto de unión entre dos splines sea lo más "suave" posible (ej. evitar puntos angulosos), por lo que se pedirá también que en esos puntos ambos splines tengan derivada común. Esto no será siempre posible y, a menudo, se empleará otro tipo de interpolación, quizás una interpolación no-polinómica.\\
+
+
+
 
 \section{Interpolación  de Taylor}
 \label{2:sec:2}
@@ -244,14 +267,7 @@ También existen métodos de Interpolación segmentaria que nos permiten aproxim
 $P(x)=\sum_{i=1}^n\frac{f^{(i)} (x_0)}{i!}\quad(x - x_0)^i $
 \end{center}  
   
-  
-  
-  
-  
-  
-  
-  
-  
+%\includegraphics[width=0.5\textwidth]{grafica4.eps} 
   
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -275,9 +291,9 @@ Con c= 1.25 y n= 5
 	\hline
 	1.5 & -1.00452485553482 & -1 & 0.00452485553481630\\	
 	\hline
-	1.75 & -0.900045035338955 & -1 & -0.0999549646610447\\
+	1.75 & -0.900045035338955 & -1 & 0.0999549646610447\\
 	\hline
-	2 & 0.123909925872083 & -1 & -1.12390992587208\\
+	2 & 0.123909925872083 & -1 & 1.12390992587208\\
 	\hline
 \end{tabular}
 \end{center}
@@ -286,14 +302,37 @@ Con c= 1.5 y x=1
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 	\hline
-	Valor del la n-ésima & Interpolación Taylor & Valor Real & Error \\
+	Valor de la n-ésima & Interpolación Taylor & Valor Real & Error \\
+    \hline
+	3 & -0.924832229288648 & -1 & 0.075167770711351\\
 	\hline
-	3 & -0.924832229288648 & -1 & -0.075167770711351\\
+    8 & -0.999843101399498 & -1 & 0.000156898600502386\\
+    \hline
+    10 & -1.00000354258429 & -1 & 3.54258428503229e-6 \\
+    \hline
+    17 & -1.00000000000004 & -1 & 4.26325641456060e-14\\
 	\hline
-	10 & -1.00000354258429 & -1 & 3.54258428503229e-6 \\
+	20 & -0.999999999999999 & -1 & 1.1102302462516e-15\\	
 	\hline
-	20 & -0.999999999999999 & -1 & -1.1102302462516e-15\\	
+\end{tabular}
+\end{center}
+
+Con c= 1.25 y n=5
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
 	\hline
+	Valor de x & Interpolación Taylor & Valor Real & Error \\
+	\hline
+	-1.5 & -352.175700107991 & -1.83697019872e-16 & 352.1757 \\
+	\hline
+	0.0 & -3.40445153931272 & 1 & 4.40445153931272 \\
+	\hline
+	1.0 & -1.00025363221339 & -1 & 0.000253632213394583\\	
+	\hline
+    1.5 & -0.000202346334410208 & -1.83697019872e-16 & 0.000202346334410024\\
+    \hline
+    3 & -3.03724338394450 & -1 & 2.03724338394450\\
+    \hline
 \end{tabular}
 \end{center}
 %\input{tex/cap4.tex}
@@ -397,14 +436,3 @@ Texto
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-
-
-
-
-
-
-

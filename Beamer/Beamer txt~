@@ -1,3 +1,4 @@
+
 \documentclass{beamer}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
@@ -114,38 +115,8 @@ pagina de internet
 
 \subsection{Ejemplo}
 
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-\begin{frame}
-\frametitle{Ejemplo}
-
-
-
-	
-  \begin{itemize}
-  	
-    \item $g(x)= x$ \\
-    	\begin{equation}
-    		$t_i=\frac{(x - x_0)^i}{i!}$
-    	
-   		 \end{equation}
-    
-    
-    
-    
-    \pause
-    \item $f(x)=cos(\Pi x)$ \\
-    Aqui va el desarollo
-    \pause
-    
-  \end{itemize}
-
-
-\end{frame}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++  
 \begin{frame}
   \frametitle{Bibliografía}
 
@@ -171,8 +142,32 @@ pagina de internet
 
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+\begin{frame}
+\frametitle{tablas}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+     \hline
+     Taylor & Real & Error \\
+	 \hline
+	 -1.00025363221339 & -1 & 0.000253632213394583 \\
+	 \hline
+	 Juanito & 9 & P+\\ 
+	 \hline
+	 Carlos & 11 & Q-\\
+	 \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+
 
 \end{document}
+
+
+
+
+
+
 
 
 

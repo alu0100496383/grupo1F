@@ -7,15 +7,9 @@
 \newtheorem{definicion}{Definición}
 \newtheorem{ejemplo}{Ejemplo}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\title[Presentación con Beamer]{Clase de Problemas }
-%\author[Técnicas Experimentales]{Técnicas Experimentales}
-%\date[07-03-2013]{7 de marzo de 2013}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usetheme{classic}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \title[Título]{Interpolación de Taylor}
 \author[Autores]{Mérari Afonso\\
 				 Ignacio Fragoso\\
@@ -41,7 +35,6 @@
   \end{scriptsize}
 
 \end{frame}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 \begin{frame}
@@ -51,72 +44,40 @@
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
 
-\section{Introducción}
-
-\subsection{Interpolación}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+\section{Introducción} 
 \begin{frame}
-
-\frametitle{Interpolación}
-
-
-
-\begin{definicion}
-Bla bla bla 
-
-\end{definicion}
-
+  \frametitle{Información del sistema operativo y del compilador}
+	
+	%Python 2.7.3 (default, Sep 26 2012, 21:51:14) 
+	%[GCC 4.7.2] on linux2.\\
+	%Type "help", "copyright", "credits" or "license" for more information.\\par
+    %Información del sistema operativo:\\
+    
+	%('Linux', 'ubuntu', '3.5.0-17-generic', '#28-Ubuntu SMP Tue Oct 9 			19:31:23 UTC 2012', 'x86_64', 'x86_64')\\par
+    
+	%Información de la versión de Python:\\
+    
+	%'2.7.3'\\par
+    
+	%Platform.python_build():\\
+    
+	%('default', 'Sep 26 2012 21:51:14')\\
+  
 \end{frame}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
 
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-%\begin{frame}
-
-%\frametitle{Segunda Sección}
-
-%\begin{block}{Ejemplo}
-%  \begin{itemize}
- % \item
- % Primer item 
- % \pause
-
-  %\item
-  %Segundo item
-  %\pause
-
-  %\item
-  %Tercer item
-  %\pause
-
-  %\end{itemize}
-%\end{block}
-
-%\end{frame}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
+%+++++++++++++++++
 
 \section{Interpolación de Taylor}
-  \subsection{¿Cómo se calcula?}
 \begin{frame}
+\frametitle{Función}
+	\[funcion = cos(pi*x)\]
 
-\frametitle{¿Cómo se calcula?}
+\frametitle{Fórmula}
+	La fórmula para hallar la interpolación de Taylor es:
+\end{frame
+}
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-pagina de internet
-
-\end{frame}
-
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-%\begin{frame}
-%\frametitle{}
-
-%Texto de la diapositiva
-%\end{frame}
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  
-
-\subsection{Ejemplo}
-
-%++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+  
 \begin{frame}
   \frametitle{Bibliografía}
 
