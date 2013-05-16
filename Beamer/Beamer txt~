@@ -47,9 +47,11 @@
 	\begin{itemize}
 	   \item La versión de Python utilizada es:\\	
 		Python 2.7.3 \\ 
+       \pause
 	   \item Információn del sistema operativo: \\
 		'Linux', 'ubuntu', '3.5.0-17-generic'
-	   \item Información del procesador del sistema:\\
+	   \pause
+       \item Información del procesador del sistema:\\
 		model name: Intel(R) Celeron(R) CPU  550  @ 2.00GHz\\
 		cpu MHz: 1995.123\\
 		cache size: 1024 KB\\
@@ -65,7 +67,9 @@
         \begin{itemize}
         \item Para hallar la interpolación de Taylor hemos utilizado el polinomio de Taylor
         \[P(x)=\sum\limits_{i=1}^n\frac{f^{(i)}(x_0)}{i!}\quad(x-x_0)^i \]
+        \pause
 		\item Para hallar el error restamos el valor real de la función menos el valor de la interpolación de Taylor en valor absoluto.
+        \pause
 		\end{itemize}
 \end{frame}
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -138,7 +142,11 @@
 	\end{center}
 \end{frame}
 %++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-\
+%\begin{frame}
+  %\includegraphics{grafica1.py}
+  %\hspace*{7.5cm}
+ % \includegraphics{grafica2.py}
+%\end{frame}
 
 \end{document}
 
